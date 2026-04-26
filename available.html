@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Available Work Orders • Plush Intentions</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">PLUSH INTENTIONS</div>
+    <div class="header-right">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Logout</a>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="card">
+      <div class="card-header">
+        <div class="card-title">Available Work Orders</div>
+        <div class="card-subtitle">
+          Jobs within your service radius. Request assignments from here.
+        </div>
+      </div>
+
+      <div id="workorders-list" class="workorders-list">
+        <!-- Work orders will be injected here via JavaScript -->
+      </div>
+
+      <div class="helper-text">
+        Tap a work order to view details. Sensitive information is hidden until assigned.
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/map.js"></script>
+</body>
+</html>

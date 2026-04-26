@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plush Intentions – Technician Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: #f7f5f9;
+      color: #222;
+    }
+    .shell { max-width: 1200px; margin: 0 auto; padding: 16px; }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #b07a7a;
+    }
+    .btn {
+      border-radius: 999px;
+      border: none;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #f3d9d0, #e0b4a4);
+      color: #3a2626;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+    #map { width: 100%; height: 360px; border-radius: 16px; overflow: hidden; }
+    .row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .col { flex: 1 1 0; min-width: 260px; }
+    .wo-item {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .wo-item.unassigned { background: #fff7f7; border-color: #f3d0d0; }
+    .wo-item.assigned { background: #f5f3f8; border-color: #d7c7f0; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: #f3d9d0;
+      color: #5a3434;
+      margin-left: 6px;
+    }
+    .muted { font-size: 12px; color: #777; }
+    #login-view, #app-view { display: none; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="card">
+      <div class="brand">PLUSH INTENTIONS – TECH PORTAL</div>
+    </div>
+
+    <div id="login-view" class="card">
+      <h2>Technician Login</h2>
+      <div style="margin-bottom: 8px;">
+        <label>Email</label><br />
+        <input id="login-email" type="email" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;" />
+      </div>
+      <div style="margin-bottom: 16px;">
+        <label>Password</label><br />
+        <input id="login-password" type="password" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;" />
+      </div>
+      <button id="login-btn" class="btn">Sign In</button>
+      <div id="login-error" class="muted" style="color:#b33;margin-top:8px;"></div>
+    </div>
+
+    <div id="app-view">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div class="muted">Logged in as</div>
+            <div id="tech-name" style="font-weight:600;"></div>
+            <div id="tech-meta" class="muted"></div>
+          </div>
+          <button id="logout-btn" class="btn" style="background:#eee;color:#444;">Log out</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Dashboard</h3>
+        <div id="map"></div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h3>Available Work Orders</h3>
+            <div id="wo-list"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h3>Work Order Details</h3>
+            <div id="wo-detail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Work Order • Plush Intentions</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">PLUSH INTENTIONS</div>
+    <div class="header-right">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Logout</a>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="card card-workorder">
+      <div class="card-header">
+        <div id="wo-title" class="card-title">Work Order</div>
+        <div id="wo-subtitle" class="card-subtitle">
+          Loading work order details…
+        </div>
+      </div>
+
+      <!-- Assigned view -->
+      <div id="wo-assigned" class="wo-section wo-section-assigned hidden">
+        <div class="wo-row">
+          <div class="wo-label">Status</div>
+          <div class="wo-value" id="wo-status"></div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Service Address</div>
+          <div class="wo-value" id="wo-address"></div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Customer</div>
+          <div class="wo-value" id="wo-customer"></div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Priority</div>
+          <div class="wo-value" id="wo-priority"></div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Notes</div>
+          <div class="wo-value" id="wo-notes"></div>
+        </div>
+
+        <div class="map-section">
+          <div class="map-header">
+            <div class="map-title">Exact Location</div>
+            <div class="map-subtitle">You are assigned to this job.</div>
+          </div>
+          <div id="wo-map-assigned" class="map-container"></div>
+        </div>
+
+        <div class="wo-actions">
+          <button class="primary-btn">Start Job</button>
+          <button class="primary-btn wo-secondary">Update Job</button>
+          <button class="primary-btn wo-secondary">Complete Job</button>
+        </div>
+      </div>
+
+      <!-- Unassigned view -->
+      <div id="wo-unassigned" class="wo-section wo-section-unassigned hidden">
+        <div class="wo-row">
+          <div class="wo-label">Status</div>
+          <div class="wo-value" id="wo-status-unassigned"></div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Service Area</div>
+          <div class="wo-value wo-blurred">
+            Exact address hidden until assignment.
+          </div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Priority</div>
+          <div class="wo-value" id="wo-priority-unassigned"></div>
+        </div>
+        <div class="wo-row">
+          <div class="wo-label">Summary</div>
+          <div class="wo-value" id="wo-summary-unassigned"></div>
+        </div>
+
+        <div class="map-section">
+          <div class="map-header">
+            <div class="map-title">General Service Area</div>
+            <div class="map-subtitle">
+              Blush radius shows approximate location. Exact address is hidden until assigned.
+            </div>
+          </div>
+          <div id="wo-map-unassigned" class="map-container map-container-blush"></div>
+        </div>
+
+        <div class="wo-actions">
+          <button id="wo-request-btn" class="primary-btn">
+            Request This Work Order
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/map.js"></script>
+</body>
+</html>
