@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Close-Out Work Order</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #fdf2f6, #ffe6ef);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 10px;
+    }
+
+    .welcome {
+      font-size: 20px;
+      font-weight: 700;
+      color: #7a4f4f;
+      margin-bottom: 15px;
+    }
+
+    .container-wrapper {
+      position: relative;
+      width: 70%;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .container-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      background: radial-gradient(circle, rgba(255,182,193,0.35), rgba(255,182,193,0));
+      filter: blur(25px);
+      animation: softGlow 4s ease-in-out infinite alternate;
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    @keyframes softGlow {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+
+    .update-box {
+      background-color: #d2c2a8;
+      padding: 25px;
+      border-radius: 8px;
+      border: 2px solid #f4b6c2;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: left;
+    }
+
+    h1 {
+      color: #7a4f4f;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .detail-item {
+      background-color: #fff;
+      border-radius: 6px;
+      border: 2px solid #bfae94;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .detail-item h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .detail-item p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .closeout-btn {
+      background-color: #f4b6c2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .closeout-btn:hover {
+      background-color: #e89aaa;
+      transform: translateY(-2px);
+    }
+
+    .back-btn {
+      margin-top: 15px;
+      background-color: #b85c7d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+      width: 100%;
+    }
+
+    .back-btn:hover {
+      background-color: #9e4d6a;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="PlushLogo1.jpg" class="logo" alt="Plush Intentions LLC Logo">
+
+  <!-- Welcome text -->
+  <h2 class="welcome" id="welcome-text">Loading...</h2>
+
+  <div class="container-wrapper">
+    <div class="update-box">
+
+      <h1>Close-Out Work Order</h1>
+
+      <div id="update-details">
+        <p>Loading work order...</p>
+      </div>
+
+      <button class="closeout-btn" id="closeout-btn">Open Close-Out Form</button>
+
+      <button class="back-btn" onclick="window.location.href='assigned.html'">Back to Assigned</button>
+
+    </div>
+  </div>
+
+  <script src="update.js"></script>
+
+</body>
+</html>

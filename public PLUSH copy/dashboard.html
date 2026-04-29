@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #fdf2f6, #ffe6ef);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 15px;
+    }
+
+    .container-wrapper {
+      position: relative;
+      width: 70%;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .container-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      background: radial-gradient(circle, rgba(255,182,193,0.35), rgba(255,182,193,0));
+      filter: blur(25px);
+      animation: softGlow 4s ease-in-out infinite alternate;
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    @keyframes softGlow {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+
+    .dashboard-box {
+      background-color: #d2c2a8;
+      padding: 25px;
+      border-radius: 8px;
+      border: 2px solid #f4b6c2;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #7a4f4f;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #bfae94;
+      margin-bottom: 25px;
+    }
+
+    .nav-btn {
+      width: 80%;
+      padding: 14px;
+      margin: 10px auto;
+      background-color: #f4b6c2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: block;
+    }
+
+    .nav-btn:hover {
+      background-color: #e89aaa;
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <!-- Mapbox -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <img src="PlushLogo1.jpg" class="logo" alt="Plush Intentions LLC Logo">
+
+  <div class="container-wrapper">
+    <div class="dashboard-box">
+
+      <h1>Technician Dashboard</h1>
+
+      <div class="map-container">
+        <div id="map" style="width:100%; height:100%;"></div>
+      </div>
+
+      <button class="nav-btn" onclick="window.location.href='assigned.html'">Assigned Work Orders</button>
+      <button class="nav-btn" onclick="window.location.href='available.html'">Available Work Orders</button>
+      <button class="nav-btn" onclick="window.location.href='update.html'">Update Work Order</button>
+
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+
+</body>
+</html>
